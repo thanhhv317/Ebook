@@ -268,7 +268,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <li><a href="{!! route('admin.home.getList') !!}">Trang chủ</a></li>
                 <li><a href="#">Sản phẩm</a></li>
                 <li><a href="#">Blog</a></li>
-                <li><a href="#">Thông tin</a></li>
+                <li><a href="{!! url('admin/about/list') !!}">Thông tin</a></li>
                 <li><a href="#">Liên hệ</a></li>
               </ul>
             </li>

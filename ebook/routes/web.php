@@ -90,15 +90,25 @@ Route::group(['prefix'=>'admin'],function(){
 		Route::get('editbn/{id}',['as'=>'admin.home.getEditBanner','uses'=>'PageHomeController@getEditBanner']);
 		Route::post('editbn/{id}',['as'=>'admin.home.postEditBanner','uses'=>'PageHomeController@postEditBanner']);
 	});
+	Route::group(['prefix'=>'about'],function(){
+		//slide
+		Route::get('list',['as'=>'admin.about.getList','uses'=>'PageAboutController@getList']);
+		Route::get('edit',['as'=>'admin.about.getEdit','uses'=>'PageAboutController@getEdit']);
+		Route::post('edit',['as'=>'admin.about.postEdit','uses'=>'PageAboutController@postEdit']);
+	});
+
 });
 
 // in client
-Route::get('home',['as'=>'getHome','uses'=>'HomeController@getHome']);
-Route::get('product',['as'=>'getProduct','uses'=>'HomeController@getProduct']);
-Route::get('blog',['as'=>'getBlog','uses'=>'HomeController@getBlog']);
-Route::get('product-detail/{id}',['as'=>'getProductDetail','uses'=>'HomeController@getProductDetail']);
-Route::get('about',['as'=>'getAbout','uses'=>'HomeController@getAbout']);
-Route::get('contact',['as'=>'getContact','uses'=>'HomeController@getContact']);
-Route::get('cart',['as'=>'getCart','uses'=>'HomeController@getCart']);
+Route::get('home',['as'=>'getHome','uses'=>'ClientPageController@getHome']);
+Route::get('product',['as'=>'getProduct','uses'=>'ClientPageController@getProduct']);
+Route::get('blog',['as'=>'getBlog','uses'=>'ClientPageController@getBlog']);
+Route::get('product-detail/{id}',['as'=>'getProductDetail','uses'=>'ClientPageController@getProductDetail']);
+Route::get('about',['as'=>'getAbout','uses'=>'ClientPageController@getAbout']);
+Route::get('contact',['as'=>'getContact','uses'=>'ClientPageController@getContact']);
+Route::get('cart',['as'=>'getCart','uses'=>'ClientPageController@getCart']);
 
 
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

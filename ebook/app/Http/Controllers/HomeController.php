@@ -3,40 +3,26 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\TopSlide;
 
 class HomeController extends Controller
 {
-    public function getHome(){
-        $banner = TopSlide::find(1);
-        $current_data_json = $banner->value;
-        $result = json_decode($current_data_json,true);
-    	return view('index',compact('result'));
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
     }
 
-    public function getProduct(){
-    	return view('product');
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function index()
+    {
+        return view('home');
     }
-
-    public function getBlog(){
-    	return view('blog');
-    }
-
-    public function getProductDetail($id){
-    	return view('product-detail');
-    }
-
-    public function getAbout(){
-    	return view('about');
-    }
-
-    public function getContact(){
-    	return view('contact');
-    }
-
-    public function getCart(){
-    	return view('cart');
-    }
-
-
 }
