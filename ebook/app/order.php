@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 class order extends Model
 {
     protected $table = 'orders';
-    protected $fillable = ['user_id','book_id','quantity','content'];
+    protected $fillable = ['quantity','totalPrice','name','address','phone','email','content','status'];
 }

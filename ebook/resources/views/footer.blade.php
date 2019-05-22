@@ -5,6 +5,11 @@
 <!--===============================================================================================-->
 	<script type="text/javascript" src="{!! url('public/page/vendor/bootstrap/js/popper.js') !!}"></script>
 	<script type="text/javascript" src="{!! url('public/page/vendor/bootstrap/js/bootstrap.min.js') !!}"></script>
+	<!-- input mask -->
+
+	<script src="{!! url('public/admin/plugins/input-mask/jquery.inputmask.js') !!}" type="text/javascript"></script>
+    <script src="{!! url('public/admin/plugins/input-mask/jquery.inputmask.date.extensions.js') !!}" type="text/javascript"></script>
+    <script src="{!! url('public/admin/plugins/input-mask/jquery.inputmask.extensions.js') !!}" type="text/javascript"></script>
 <!--===============================================================================================-->
 	<script type="text/javascript" src="{!! url('public/page/vendor/select2/select2.min.js') !!}"></script>
 	<script type="text/javascript">
@@ -53,6 +58,8 @@
 				swal(nameProduct, "is added to wishlist !", "success");
 			});
 		});
+		$("#datemask").inputmask("dd/mm/yyyy", {"placeholder": "dd/mm/yyyy"});
+        $("[data-mask]").inputmask();
 	</script>
 
 	<script>
@@ -95,8 +102,12 @@
 
 		var totalPrice = 0;
 		var totalQuantity = 0;
+
 		function showCart(){
-			
+			var resultId = [];
+			var resultQuantity = [];
+			var resultPrice = [];
+
 			for (var i = 0; i < localStorage.length; i++) {
 				var key = localStorage.key(i);
 				var quantity = 0;
@@ -124,11 +135,18 @@
 					item +='</tr>';
 					
 					$('.table-shopping-cart').append(item);		
-
+					resultId.push(product.id);
+					resultQuantity.push(product.quantity);
+					resultPrice.push(product.price);
 				}
 			}
-			$('.totalPrice').html(totalPrice);
-			// $('.header-icons-noti').html(totalquantity);
+			$('.totalPrice').html(totalPrice+'<input type="hidden" class="form-control" name="totalPrice" value="'+totalPrice+'">');
+			$('.totalQuantity').html(totalQuantity+'<input type="hidden" class="form-control" name="totalQuantity" value="'+totalQuantity+'">'+'<input type="hidden" class="form-control" name="resultId" value="'+resultId+'">'+'<input type="hidden" class="form-control" name="resultQuantity" value="'+resultQuantity+'">'+'<input type="hidden" class="form-control" name="resultPrice" value="'+resultPrice+'">'
+				);
+			if (totalQuantity==0){
+				$('.notificate').html('<div style="text-align: center;" class="alert alert-warning"><b >Bạn chưa chọn sản phẩm nào để có thể thanh toán vui lòng kiểm tra lại trong <a href="cart">giỏ hàng</a>!</b></div>');
+				$('.notificate2').html('<div style="text-align: center;" class="alert alert-warning"><b >Bạn chưa chọn sản phẩm nào vui lòng mua thêm tại <a href="product"> danh mục sản phẩm</a>!</b></div>');
+			}
 		}
 
 		function plus(id){
@@ -197,6 +215,7 @@
 			hoverShowCartIcon();
 			showCart();
 		});
+		
 	</script>
 
 <!--===============================================================================================-->

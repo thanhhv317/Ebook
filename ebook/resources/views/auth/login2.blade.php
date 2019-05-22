@@ -1,4 +1,4 @@
-@extends('../layouts/app2');
+@extends('../layouts/app2')
 @section('content')
     <div class="login-box">
       <div class="login-logo">

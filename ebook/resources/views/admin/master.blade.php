@@ -1,3 +1,13 @@
+<?php 
+  if((Auth::user())){
+    if(Auth::user()->level ==2){
+      // là admin đây rồi chứ đâu nữa hihi
+    }else{
+      echo "<script>window.location='".url('home')."';</script>";
+    }
+  }
+?>
+
 <!DOCTYPE html>
 <!--
 This is a starter template page. Use this page to start your new project from
@@ -63,7 +73,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <header class="main-header">
 
         <!-- Logo -->
-        <a href="#" class="logo">
+        <a href="{!! url('admin/dashboard/list') !!}" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
           <span class="logo-mini"><b>A</b>LT</span>
           <!-- logo for regular state and mobile devices -->
@@ -174,16 +184,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <!-- Menu Toggle Button -->
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <!-- The user image in the navbar-->
-                  <img src="{!! url('public/admin/dist/img/user2-160x160.jpg') !!}" class="user-image" alt="User Image" />
+                  <img src="{!! url('resources/uploads/users/'. auth::user()->image ) !!}" class="user-image" alt="User Image" />
                   <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                  <span class="hidden-xs">Alexander Pierce</span>
+                  <span class="hidden-xs">{{ Auth::user()->name }}</span>
                 </a>
                 <ul class="dropdown-menu">
                   <!-- The user image in the menu -->
                   <li class="user-header">
-                    <img src="{!! url('public/admin/dist/img/user2-160x160.jpg') !!}" class="img-circle" alt="User Image" />
+                    <img src="{!! url('resources/uploads/users/'. auth::user()->image ) !!}" class="img-circle" alt="User Image" />
                     <p>
-                      Alexander Pierce - Web Developer
+                      {{ Auth::user()->name }} - Web Developer
                       <small>Member since Nov. 2012</small>
                     </p>
                   </li>
@@ -202,11 +212,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <!-- Menu Footer-->
                   <li class="user-footer">
                     <div class="pull-left">
-                      <a href="#" class="btn btn-default btn-flat">Profile</a>
+                      <a href="{!! url('admin/profile') !!}" class="btn btn-default btn-flat">Thông tin</a>
                     </div>
                     <div class="pull-right">
-                      <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                      <a href="{{ route('logout') }}" class="btn btn-default btn-flat" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Đăng xuất</a>
                     </div>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                     @csrf
+                    </form>
                   </li>
                 </ul>
               </li>
@@ -227,12 +240,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <!-- Sidebar user panel (optional) -->
           <div class="user-panel">
             <div class="pull-left image">
-              <img src="{!! url('public/admin/dist/img/user2-160x160.jpg') !!}" class="img-circle" alt="User Image" />
+              <img src="{!! url('resources/uploads/users/'. auth::user()->image ) !!}" class="img-circle" alt="User Image" />
             </div>
             <div class="pull-left info">
-              <p>Alexander Pierce</p>
+              <p>{{ Auth::user()->name }}</p>
               <!-- Status -->
-              <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+              <!-- <a href="#"><i class="fa fa-circle text-success"></i> Online</a> -->
             </div>
           </div>
 
@@ -256,6 +269,19 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <li><a href="{!! url('admin/kind/list') !!}"><i class="fa fa-link"></i> <span>Thể loại</span></a></li>
             <li><a href="{!! url('admin/publisher/list') !!}"><i class="fa fa-truck"></i> <span>Nhà xuất bản</span></a></li>
             <li class="treeview">
+              <a href="#"><i class="fa fa-newspaper-o"></i> <span>Hóa đơn</span> <i class="fa fa-angle-left pull-right"></i></a>
+              <ul class="treeview-menu">
+                <li><a href="{!! url('admin/order/list') !!}">Tất cả</a></li>
+                <li><a href="{!! url('admin/order/list/0') !!}">Mới</a></li>
+                <li><a href="{!! url('admin/order/list/1') !!}">Bị hủy bỏ</a></li>
+                <li><a href="{!! url('admin/order/list/2') !!}">Hết hạn</a></li>
+                <li><a href="{!! url('admin/order/list/3') !!}">Đang xử lý</a></li>
+                <li><a href="{!! url('admin/order/list/4') !!}">Hoàn thành</a></li>
+                <li><a href="{!! url('admin/order/list/5') !!}">Phiếu khống</a></li>
+                <li><a href="{!! url('admin/order/list/6') !!}">Vận chuyển</a></li>
+              </ul>
+            </li>
+            <li class="treeview">
               <a href="#"><i class="fa fa-bar-chart"></i> <span>Thống kê</span> <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
                 <li><a href="#">Sách</a></li>
@@ -266,10 +292,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <a href="#"><i class="fa fa-image"></i> <span>Trang bán sách - Baner</span> <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
                 <li><a href="{!! route('admin.home.getList') !!}">Trang chủ</a></li>
-                <li><a href="#">Sản phẩm</a></li>
-                <li><a href="#">Blog</a></li>
+                <li><a href="{!! route('admin.page.getList') !!}">Sản phẩm-thông tin...</a></li>
                 <li><a href="{!! url('admin/about/list') !!}">Thông tin</a></li>
-                <li><a href="#">Liên hệ</a></li>
               </ul>
             </li>
           </ul><!-- /.sidebar-menu -->

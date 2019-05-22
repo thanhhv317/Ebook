@@ -11,25 +11,7 @@
 	<header class="header1">
 		<!-- Header desktop -->
 		<div class="container-menu-header">
-			<div class="topbar">
-				<div class="topbar-social">
-					<a href="#" class="topbar-social-item fa fa-facebook"></a>
-					<a href="#" class="topbar-social-item fa fa-instagram"></a>
-					<a href="#" class="topbar-social-item fa fa-pinterest-p"></a>
-					<a href="#" class="topbar-social-item fa fa-snapchat-ghost"></a>
-					<a href="#" class="topbar-social-item fa fa-youtube-play"></a>
-				</div>
-
-				<span class="topbar-child1">
-					Miễn phí vận chuyển cho hóa đơn trên 200k
-				</span>
-
-				<div class="topbar-child2">
-					<span class="topbar-email">
-						thanhhv317@gmail.com
-					</span>
-				</div>
-			</div>
+			
 
 			<div class="wrap_header">
 				<!-- Logo -->
@@ -42,33 +24,63 @@
 					<nav class="menu">
 						<ul class="main_menu">
 							<li>
-								<a href="{!! url('home') !!}">Home</a>
+								<a href="{!! url('home') !!}">Trang chủ</a>
 							</li>
 							<!-- mun active thi add  class="sale-noti" -->
 							<li >
-								<a href="{!! url('product') !!}">Shop</a>
+								<a href="{!! url('product') !!}">Sản phẩm</a>
+							</li>
+
+							<!-- <li>
+								<a href="">Blog</a>
+							</li> -->
+
+							<li>
+								<a href="{!! url('about') !!}">Thông tin</a>
 							</li>
 
 							<li>
-								<a href="{!! url('blog') !!}">Blog</a>
+								<a href="{!! url('contact') !!}">Liên hệ</a>
 							</li>
-
+							@if(Auth::user()  && Auth::user()->level==2)
+							
 							<li>
-								<a href="{!! url('about') !!}">About</a>
+								<a href="{!! url('admin/book/list') !!}">Admin</a>
 							</li>
-
-							<li>
-								<a href="{!! url('contact') !!}">Contact</a>
-							</li>
+							@endif
 						</ul>
 					</nav>
 				</div>
 
 				<!-- Header Icon -->
 				<div class="header-icons">
-					<a href="#" class="header-wrapicon1 dis-block">
-						<img src="{!! url('public/page/images/icons/icon-header-01.png') !!}" class="header-icon1" alt="ICON">
-					</a>
+					@if(Auth::user())
+					<div class="header-wrapicon1">
+						<img src="{!! url('public/page/images/icons/icon-header-01.png') !!}" class="header-icon1 js-show-header-dropdown" alt="ICON">
+					
+						<div class="header-cart header-dropdown" style="width: 200px">
+							<ul class="header-cart-wrapitem2">
+								
+							</ul>
+
+							<div>
+								<p>{!! Auth::user()->name !!}</p>
+								<hr>
+								<a href="{!! url('profile') !!}" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+										Xem thông tin
+								</a>
+								<a href="{!! route('logout') !!}" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+										Đăng xuất
+								</a>
+								<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+			                     @csrf
+			                    </form>
+							</div>
+						</div>
+					</div>
+					@else
+					<a href="{!! route('login') !!}">Đăng nhập</a>
+					@endif
 
 					<span class="linedivide1"></span>
 
@@ -90,14 +102,14 @@
 								<div class="header-cart-wrapbtn">
 									<!-- Button -->
 									<a href="{!! url('cart') !!}" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
-										View Cart
+										Xem giỏ hàng
 									</a>
 								</div>
 
 								<div class="header-cart-wrapbtn">
 									<!-- Button -->
-									<a href="#" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
-										Check Out
+									<a href="{{ url('checkout') }}" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4 checkoutCart">
+										Thanh toán
 									</a>
 								</div>
 							</div>
@@ -118,9 +130,31 @@
 			<div class="btn-show-menu">
 				<!-- Header Icon mobile -->
 				<div class="header-icons-mobile">
-					<a href="#" class="header-wrapicon1 dis-block">
-						<img src="{!! url('public/page/images/icons/icon-header-01.png') !!}" class="header-icon1" alt="ICON">
-					</a>
+					@if(Auth::user())
+					<div class="header-wrapicon1">
+						<img src="{!! url('public/page/images/icons/icon-header-01.png') !!}" class="header-icon1 js-show-header-dropdown" alt="ICON">
+					
+						<div class="header-cart header-dropdown" style="width: 200px">
+							<ul class="header-cart-wrapitem2">
+								
+							</ul>
+
+							<div>
+								<p>{!! Auth::user()->name !!}</p>
+								<hr>
+								<a href="{!! url('profile') !!}" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+										Xem thông tin
+								</a>
+								<a href="{!! route('logout') !!}" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+										Đăng xuất
+								</a>
+							</div>
+						</div>
+					</div>
+
+					@else
+					<a href="{!! route('login') !!}" >Đăng nhập</a>
+					@endif
 
 					<span class="linedivide2"></span>
 
@@ -142,14 +176,14 @@
 								<div class="header-cart-wrapbtn">
 									<!-- Button -->
 									<a href="{!! url('cart') !!}" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
-										View Cart
+										Xem giỏ hàng
 									</a>
 								</div>
 
 								<div class="header-cart-wrapbtn">
 									<!-- Button -->
-									<a href="#" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
-										Check Out
+									<a href="{{ url('checkout') }}" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4 checkoutCart">
+										Thanh toán
 									</a>
 								</div>
 							</div>
@@ -175,43 +209,31 @@
 						</span>
 					</li>
 
-					<li class="item-topbar-mobile p-l-20 p-t-8 p-b-8">
-						<div class="topbar-child2-mobile">
-							<span class="topbar-email">
-								thanhhv317@gmail.com
-							</span>
-						</div>
-					</li>
 
-					<li class="item-topbar-mobile p-l-10">
-						<div class="topbar-social-mobile">
-							<a href="#" class="topbar-social-item fa fa-facebook"></a>
-							<a href="#" class="topbar-social-item fa fa-instagram"></a>
-							<a href="#" class="topbar-social-item fa fa-pinterest-p"></a>
-							<a href="#" class="topbar-social-item fa fa-snapchat-ghost"></a>
-							<a href="#" class="topbar-social-item fa fa-youtube-play"></a>
-						</div>
+					<li class="item-menu-mobile">
+						<a href="{!! url('home') !!}">Trang chủ</a>
 					</li>
 
 					<li class="item-menu-mobile">
-						<a href="{!! url('home') !!}">Home</a>
+						<a href="{!! url('product') !!}">Sản phẩm</a>
+					</li>
+
+					<!-- <li class="item-menu-mobile">
+						<a href="">Blog</a>
+					</li> -->
+
+					<li class="item-menu-mobile">
+						<a href="{!! url('about') !!}">Thông tin</a>
 					</li>
 
 					<li class="item-menu-mobile">
-						<a href="{!! url('product') !!}">Shop</a>
+						<a href="{!! url('contact') !!}">Liên hệ</a>
 					</li>
-
+					@if(Auth::user() && Auth::user()->level==2)
 					<li class="item-menu-mobile">
-						<a href="{!! url('blog') !!}">Blog</a>
+						<a href="{!! url('admin/book/list') !!}">Admin</a>
 					</li>
-
-					<li class="item-menu-mobile">
-						<a href="{!! url('about') !!}">About</a>
-					</li>
-
-					<li class="item-menu-mobile">
-						<a href="{!! url('contact') !!}">Contact</a>
-					</li>
+					@endif
 				</ul>
 			</nav>
 		</div>
@@ -226,20 +248,17 @@
 		<div class="flex-w p-b-90">
 			<div class="w-size6 p-t-30 p-l-15 p-r-15 respon3">
 				<h4 class="s-text12 p-b-30">
-					GET IN TOUCH
+					Liên lạc
 				</h4>
 
 				<div>
 					<p class="s-text7 w-size27">
-						Any questions? Let us know in store at 8th floor, 379 Hudson St, New York, NY 10018 or call us on (+1) 96 716 6879
+						Nếu có câu hỏi nào vui lòng liên hệ số điện thoại (+84) 0332 072 362.
 					</p>
 
 					<div class="flex-m p-t-30">
-						<a href="#" class="fs-18 color1 p-r-20 fa fa-facebook"></a>
-						<a href="#" class="fs-18 color1 p-r-20 fa fa-instagram"></a>
-						<a href="#" class="fs-18 color1 p-r-20 fa fa-pinterest-p"></a>
-						<a href="#" class="fs-18 color1 p-r-20 fa fa-snapchat-ghost"></a>
-						<a href="#" class="fs-18 color1 p-r-20 fa fa-youtube-play"></a>
+						<a href="https://www.facebook.com/thanhfuzu18" class="fs-18 color1 p-r-20 fa fa-facebook"></a>
+						<a href="https://www.youtube.com/channel/UCN4AhzL9_RFZjmC-mvLvqhQ?view_as=subscriber" class="fs-18 color1 p-r-20 fa fa-youtube-play"></a>
 					</div>
 				</div>
 			</div>

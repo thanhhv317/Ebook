@@ -2,12 +2,12 @@
 @section('content')
 
 	<!-- Title Page -->
-	<section class="bg-title-page p-t-50 p-b-40 flex-col-c-m" style="background-image: url({!! url('public/page/images/heading-pages-02.jpg') !!});">
+	<section class="bg-title-page p-t-50 p-b-40 flex-col-c-m" style="background-image: url({!! url('resources/uploads/pages/'.$page->image) !!});">
 		<h2 class="l-text2 t-center">
-			Women
+			{!! $page->text !!}
 		</h2>
 		<p class="m-text13 t-center">
-			New Arrivals Women Collection 2018
+			
 		</p>
 	</section>
 
@@ -20,7 +20,9 @@
 					<div class="leftbar p-r-20 p-r-0-sm">
 						<!--  -->
 						<h4 class="m-text14 p-b-7">
+							<a class="m-text14 p-b-7" href="{!! url('product/' ) !!}">
 							Thể loại
+							</a>
 						</h4>
 
 						<ul class="p-b-54">
@@ -31,7 +33,7 @@
 							</li> -->
 							@foreach($kind as $item)
 							<li class="p-t-4">
-								<a href="#" class="s-text13">
+								<a href="{!! url('product/'.$item->id ) !!}" class="s-text13">
 									{!! $item->name !!}
 								</a>
 							</li>
@@ -39,7 +41,7 @@
 						</ul>
 
 						<!--  -->
-						<h4 class="m-text14 p-b-32">
+						<!-- <h4 class="m-text14 p-b-32">
 							Filters
 						</h4>
 
@@ -54,7 +56,7 @@
 
 							<div class="flex-sb-m flex-w p-t-16">
 								<div class="w-size11">
-									<!-- Button -->
+									
 									<button class="flex-c-m size4 bg7 bo-rad-15 hov1 s-text14 trans-0-4">
 										Filter
 									</button>
@@ -64,12 +66,11 @@
 									Range: <span id="value-lower">610</span>K - <span id="value-upper">980</span>K
 								</div>
 							</div>
-						</div>
-
+						</div> -->
 						<div class="search-product pos-relative bo4 of-hidden">
-							<input class="s-text7 size6 p-l-23 p-r-50" type="text" name="search-product" placeholder="Search Products...">
+							<input class="s-text7 size6 p-l-23 p-r-50 search-product-val" type="text" name="search-product" placeholder="Search Products...">
 
-							<button class="flex-c-m size5 ab-r-m color2 color0-hov trans-0-4">
+							<button class="flex-c-m size5 ab-r-m color2 color0-hov trans-0-4" onclick="searchProduct()">
 								<i class="fs-12 fa fa-search" aria-hidden="true"></i>
 							</button>
 						</div>
@@ -81,13 +82,13 @@
 					<div class="flex-sb-m flex-w p-b-35">
 						
 
-						<span class="s-text8 p-t-5 p-b-5">
+						<span class="s-text8 p-t-5 p-b-5 sum-result">
 							Tổng {!! $book->total() !!} kết quả được tìm thấy
 						</span>
 					</div>
 
 					<!-- Product -->
-					<div class="row">
+					<div class="row list-book">
 						@foreach($book as $item)
 						<div class="col-sm-12 col-md-6 col-lg-4 p-b-50">
 							<!-- Block2 -->
@@ -168,9 +169,19 @@
 	    filterBar.noUiSlider.on('update', function( values, handle ) {
 	        skipValues[handle].innerHTML = Math.round(values[handle]) ;
 	    });
-
-	    
-
+	</script>
+	<script>
+		function searchProduct(){
+			var name = $('.search-product-val').val();
+			$.ajax({
+				url: "{{ url('search') }}"+'/'+name,
+				success: function(data) { 
+		          	$('.list-book').html(data);
+		        }
+			});
+			
+			
+		}
 	</script>
 
 @endsection()

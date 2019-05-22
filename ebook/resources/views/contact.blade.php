@@ -2,9 +2,9 @@
 @section('content')
 
 	<!-- Title Page -->
-	<section class="bg-title-page p-t-40 p-b-50 flex-col-c-m" style="background-image: url({!! url('public/page/images/heading-pages-06.jpg') !!});">
+	<section class="bg-title-page p-t-40 p-b-50 flex-col-c-m" style="background-image: url({!! url('resources/uploads/pages/'. $page->image) !!});">
 		<h2 class="l-text2 t-center">
-			Contact
+			{!! $page->text !!}
 		</h2>
 	</section>
 
@@ -19,9 +19,10 @@
 				</div>
 
 				<div class="col-md-6 p-b-30">
-					<form class="leave-comment">
+					<form class="leave-comment" action="{!! url('contact') !!}" method="post">
+						@csrf
 						<h4 class="m-text26 p-b-36 p-t-15">
-							Send us your message
+							Gửi tin nhắn cho chúng tôi
 						</h4>
 
 						<div class="bo4 of-hidden size15 m-b-20">

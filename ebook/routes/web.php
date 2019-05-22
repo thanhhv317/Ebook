@@ -19,7 +19,13 @@ Route::get('test',function(){
 	return view('admin.master');
 });
 
-Route::group(['prefix'=>'admin'],function(){
+Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
+	Route::get('profile',['as'=>'admin.getProfile','uses'=>'UserController@getProfile']);
+	Route::post('profile',['as'=>'admin.postProfile','uses'=>'UserController@postProfile']);
+	Route::group(['prefix'=>'dashboard'],function(){
+		Route::get('list',['as'=>'admin.dashboard.getList','uses'=>'DashboardController@getList']);
+	});
+
 	Route::group(['prefix'=>'book'],function(){
 		Route::get('add',['as'=>'admin.book.getAdd','uses'=>'BookController@getAdd']);
 		Route::post('add',['as'=>'admin.book.postAdd','uses'=>'BookController@postAdd']);
@@ -96,19 +102,59 @@ Route::group(['prefix'=>'admin'],function(){
 		Route::get('edit',['as'=>'admin.about.getEdit','uses'=>'PageAboutController@getEdit']);
 		Route::post('edit',['as'=>'admin.about.postEdit','uses'=>'PageAboutController@postEdit']);
 	});
+	Route::group(['prefix'=>'order'],function(){
+		Route::get('list',['as'=>'admin.order.getList','uses'=>'OrderController@getList']);
+		Route::get('list/{status}',['as'=>'admin.order.getListGroupt','uses'=>'OrderController@getListGroupt']);
+		Route::get('edit/{id}',['as'=>'admin.order.getEdit','uses'=>'OrderController@getEdit']);
+		Route::get('detail/{id}',['as'=>'admin.order.getDetail','uses'=>'OrderController@getDetail']);
+		Route::get('delete/{id}',['as'=>'admin.order.getDelete','uses'=>'OrderController@getDelete']);
+		Route::get('print/{id}',['as'=>'admin.order.getPrintOneOrder','uses'=>'OrderController@getPrintOneOrder']);
+
+		Route::get('printS/{status}',['as'=>'admin.order.getPrintGroupt','uses'=>'OrderController@getPrintGroupt']);
+
+		Route::get('printA',['as'=>'admin.order.getPrintAllOrder','uses'=>'OrderController@getPrintAllOrder']);
+
+
+		Route::get('pdfS/{status}',['as'=>'admin.order.getPdfGroupt','uses'=>'OrderController@getPdfGroupt']);
+		Route::get('pdfA',['as'=>'admin.order.getPdfAllOrder','uses'=>'OrderController@getPdfAllOrder']);
+
+		Route::get('excelA',['as'=>'admin.order.getExcelAllOrder','uses'=>'OrderController@getExcelAllOrder']);
+
+		// Route::get('add',['as'=>'admin.publisher.getAdd','uses'=>'PublisherController@getAdd']);
+		// Route::post('add',['as'=>'admin.publisher.postAdd','uses'=>'PublisherController@postAdd']);
+		
+	});
+	Route::group(['prefix'=>'page'],function(){
+		
+		Route::get('list',['as'=>'admin.page.getList','uses'=>'InfoPageController@getList']);
+		Route::post('edit',['as'=>'admin.page.postEdit','uses'=>'InfoPageController@postEdit']);
+	});
+
+	Route::group(['prefix'=>'feedback'],function(){
+		
+		Route::get('edit/{id}',['as'=>'admin.feedback.getEdit','uses'=>'FeedbackController@getEdit']);
+	});
 
 });
 
 // in client
 Route::get('home',['as'=>'getHome','uses'=>'ClientPageController@getHome']);
-Route::get('product',['as'=>'getProduct','uses'=>'ClientPageController@getProduct']);
-Route::get('blog',['as'=>'getBlog','uses'=>'ClientPageController@getBlog']);
+Route::get('product',['as'=>'getProduct1','uses'=>'ClientPageController@getProduct1']);
+Route::get('product/{kinds?}',['as'=>'getProduct','uses'=>'ClientPageController@getProduct']);
+Route::get('search/{name}',['as'=>'searchProduct','uses'=>'ClientPageController@searchProduct']);
+
+// Route::get('blog',['as'=>'getBlog','uses'=>'ClientPageController@getBlog']);
 Route::get('product-detail/{id}',['as'=>'getProductDetail','uses'=>'ClientPageController@getProductDetail']);
 Route::get('about',['as'=>'getAbout','uses'=>'ClientPageController@getAbout']);
 Route::get('contact',['as'=>'getContact','uses'=>'ClientPageController@getContact']);
+Route::post('contact',['as'=>'postContact','uses'=>'ClientPageController@postContact']);
 Route::get('cart',['as'=>'getCart','uses'=>'ClientPageController@getCart']);
+Route::get('profile',['as'=>'getInfoPeople','uses'=>'ClientPageController@getInfoPeople']);
+Route::post('profile',['as'=>'posInfoPeople','uses'=>'ClientPageController@posInfoPeople']);
+Route::get('checkout',['as'=>'getCheckout','uses'=>'ClientPageController@getCheckout']);
+Route::post('checkout',['as'=>'postCheckout','uses'=>'ClientPageController@postCheckout']);
 
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');
