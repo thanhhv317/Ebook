@@ -4,7 +4,7 @@
 		<h1 style="text-align: center;">Thông tin đơn hàng {{ $order['id'] }}</h1>
 		<hr>
 	</div>
-	
+
 	<div class="col-md-12">
 		<table class="table table-striped">
 		  <thead>
@@ -50,6 +50,26 @@
 			</tr>
 		
 		</table>
+		<p>Tình trạng đơn hàng: 
+		<?php 
+			$tmp = array(
+				0 => 'Chưa giải quyết',
+				1 => 'Bị hủy bỏ',
+				2 => 'Hết hạn',
+				3 => 'Đang xử lý',
+				4 => 'Hoàn thành',
+				5 => 'Phiếu khống',
+				6 => 'Đang vận chuyển'
+			);
+
+			foreach ($tmp as $key => $value) {
+				if($order['status'] ==$key){
+					echo $value;
+					break;	
+				}
+			}
+
+		?>
 		<h2>Tổng tiền: {{ $order['totalPrice']}} VND</h2>
 	</div>
 	<div class="col-md-1"></div>

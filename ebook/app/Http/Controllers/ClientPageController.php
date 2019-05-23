@@ -10,6 +10,7 @@ use App\book;
 use App\kind;
 use App\about;
 use App\order;
+use App\author;
 use App\User;
 use App\feedback;
 use App\OrderDetail;
@@ -17,6 +18,8 @@ use DB,Mail;
 use File;
 use App\Http\Requests\UserProfileRequest;
 use App\HeaderPage;
+use App\Mail\SendEmail;
+use App\Mail\OrderSuccessMail;
 
 class ClientPageController extends Controller
 {
@@ -31,7 +34,11 @@ class ClientPageController extends Controller
 
         $book = book::select('*')->skip(0)->take(8)->get()->toArray();
 
-    	return view('index',compact('result','banners','book'));
+        $author = author::select('*')->skip(0)->take(2)->get()->toArray();
+        $kind = kind::select('name','id')->get();
+        
+
+    	return view('index',compact('result','banners','book','author','kind'));
     }
 
     public function getProduct1(){
@@ -136,14 +143,16 @@ class ClientPageController extends Controller
     }
 
     public function postContact(){
-        //print_r($_POST);
-        $data = $_POST;
-        $email='thanhhv317@gmail.com';
-        Mail::send('mail.blanks',$data,function($msg) use($email){
-            $msg->from($email,'Thành');
-            $msg->from($email,'Mai Lan')->subject('Đây là mail của Mai Lan');   
-        });
-        return redirect()->route('getContact');
+
+        $name = Request::input('name');
+        $phone = Request::input('phone');
+        $email = Request::input('email');
+        $message = Request::input('message');
+        $subject = 'hỏi đáp';
+        $emailTo = 'thanhhv317@gmail.com';
+        Mail::to($emailTo)->send(new SendEmail($subject, $name, $message, $phone,$email));
+       
+        return redirect()->route('getContact')->with(['flash_level'=>'success','flash_message'=>"Gửi mail thành công chúng tôi sẽ cố gắng trả lời bạn nhanh nhất có thể."]);;
     }
 
     public function getCart(){
@@ -243,7 +252,41 @@ class ClientPageController extends Controller
             $order_detail->save();
         }
 
+        //send mail get order success
+        Mail::to($email)->send(new OrderSuccessMail($name, $email, $order->id));
+
+
+
         return redirect()->route('getCart')->with(['flash_level'=>'success','flash_message'=>"Đặt hàng thành công, đơn hàng sẽ chuyển đến cho bạn sớm nhất. Mã đặt hàng của bạn là $order->id. Vui lòng nhớ thông tin để tra cứu đơn hàng."]);
+    }
+
+    public function getCheckOrder(){
+        $page = HeaderPage::find('5');
+        $kind = kind::select('name','id')->get();
+        return view('checkOrder',compact('page','kind'));
+    }
+
+    public function getCheckOrderById($id){
+        $order = order::select('*')->where('id',$id)->get()->toArray();
+
+        if(count($order) <1){
+            echo '<div class="alert alert-danger" role="alert">
+  Mã hóa đơn không chính xác, vui lòng kiểm tra lại.
+</div>';
+        }
+        else{
+            $order = $order[0];
+            $order_detail = OrderDetail::select('*')->where('order_id',$id)->get()->toArray();
+            
+            $dataOrder = array();
+            $dataBook = array();
+            foreach ($order_detail as $key => $value) {
+                array_push($dataOrder, $value);
+                $book = book::find($value['book_id'])->toArray();
+                array_push($dataBook, $book);
+            }
+            return view('admin.order.checkOrder',compact('dataOrder','dataBook','order'));
+        }
     }
 
 }

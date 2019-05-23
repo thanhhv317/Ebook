@@ -6,7 +6,7 @@
       </div>
 
       <div class="register-box-body">
-        <p class="login-box-msg">Register a new membership</p>
+        <p class="login-box-msg">Đăng ký thành viên mới</p>
         <form  action="{{ route('register') }}" method="post">
            @csrf
           <div class="form-group has-feedback">
@@ -47,15 +47,15 @@
               </div>
             </div><!-- /.col -->
             <div class="col-xs-4">
-              <button type="submit" class="btn btn-primary btn-block btn-flat">Register</button>
+              <button type="submit" class="btn btn-primary btn-block btn-flat">Đăng ký</button>
             </div><!-- /.col -->
           </div>
         </form>
 
         <div class="social-auth-links text-center">
-          <p>- OR -</p>
+          <!-- <p>- OR -</p>
           <a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> Sign up using Facebook</a>
-          <a href="#" class="btn btn-block btn-social btn-google-plus btn-flat"><i class="fa fa-google-plus"></i> Sign up using Google+</a>
+          <a href="#" class="btn btn-block btn-social btn-google-plus btn-flat"><i class="fa fa-google-plus"></i> Sign up using Google+</a> -->
         </div>
 
         <a href="{!! route('login') !!}" class="text-center">I already have a membership</a>

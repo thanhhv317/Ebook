@@ -22,8 +22,10 @@ Route::get('test',function(){
 Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
 	Route::get('profile',['as'=>'admin.getProfile','uses'=>'UserController@getProfile']);
 	Route::post('profile',['as'=>'admin.postProfile','uses'=>'UserController@postProfile']);
+
 	Route::group(['prefix'=>'dashboard'],function(){
 		Route::get('list',['as'=>'admin.dashboard.getList','uses'=>'DashboardController@getList']);
+		Route::post('sendMail',['as'=>'admin.dashboard.postSendMail','uses'=>'DashboardController@postSendMail']);
 	});
 
 	Route::group(['prefix'=>'book'],function(){
@@ -135,6 +137,14 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
 		Route::get('edit/{id}',['as'=>'admin.feedback.getEdit','uses'=>'FeedbackController@getEdit']);
 	});
 
+	Route::group(['prefix'=>'statistical'],function(){
+		Route::get('bill',['as'=>'admin.statistical.getListBill','uses'=>'StatisticalController@getListBill']);
+		Route::get('book',['as'=>'admin.statistical.getListBook','uses'=>'StatisticalController@getListBook']);
+		Route::get('fblist',['as'=>'admin.statistical.getListFeedback','uses'=>'StatisticalController@getListFeedback']);
+		Route::get('detailFeedback/{id}',['as'=>'admin.statistical.getDetailFeedback','uses'=>'StatisticalController@getDetailFeedback']);
+		Route::get('deleteFeedback/{id}',['as'=>'admin.statistical.getDeleteFeedback','uses'=>'StatisticalController@getDeleteFeedback']);
+	
+	});
 });
 
 // in client
@@ -154,7 +164,12 @@ Route::post('profile',['as'=>'posInfoPeople','uses'=>'ClientPageController@posIn
 Route::get('checkout',['as'=>'getCheckout','uses'=>'ClientPageController@getCheckout']);
 Route::post('checkout',['as'=>'postCheckout','uses'=>'ClientPageController@postCheckout']);
 
+Route::get('checkOrder',['as'=>'getCheckOrder','uses'=>'ClientPageController@getCheckOrder']);
+Route::get('check/{id}',['as'=>'getCheckOrderById','uses'=>'ClientPageController@getCheckOrderById']);
+
 
 Auth::routes();
+
+Route::any('{all?}','HomeController@notFound')->where('all','(.*)');
 
 // Route::get('/home', 'HomeController@index')->name('home');

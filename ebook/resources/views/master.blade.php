@@ -15,8 +15,8 @@
 
 			<div class="wrap_header">
 				<!-- Logo -->
-				<a href="index.html" class="logo">
-					<img src="{!! url('public/page/images/icons/logo.png') !!}" alt="IMG-LOGO">
+				<a href="{{ url('home') }}" class="logo">
+					<img src="{!! url('public/page/images/icons/logo2.png') !!}" alt="IMG-LOGO">
 				</a>
 
 				<!-- Menu -->
@@ -31,9 +31,9 @@
 								<a href="{!! url('product') !!}">Sản phẩm</a>
 							</li>
 
-							<!-- <li>
-								<a href="">Blog</a>
-							</li> -->
+							<li>
+								<a href="{!! url('checkOrder') !!}">Tra cứu</a>
+							</li>
 
 							<li>
 								<a href="{!! url('about') !!}">Thông tin</a>
@@ -218,9 +218,9 @@
 						<a href="{!! url('product') !!}">Sản phẩm</a>
 					</li>
 
-					<!-- <li class="item-menu-mobile">
-						<a href="">Blog</a>
-					</li> -->
+					<li class="item-menu-mobile">
+						<a href="{!! url('checkOrder') !!}">Tra cứu</a>
+					</li>
 
 					<li class="item-menu-mobile">
 						<a href="{!! url('about') !!}">Thông tin</a>
@@ -265,31 +265,13 @@
 
 			<div class="w-size7 p-t-30 p-l-15 p-r-15 respon4">
 				<h4 class="s-text12 p-b-30">
-					Categories
+					Sản phẩm
 				</h4>
 
 				<ul>
 					<li class="p-b-9">
-						<a href="#" class="s-text7">
-							Men
-						</a>
-					</li>
-
-					<li class="p-b-9">
-						<a href="#" class="s-text7">
-							Women
-						</a>
-					</li>
-
-					<li class="p-b-9">
-						<a href="#" class="s-text7">
-							Dresses
-						</a>
-					</li>
-
-					<li class="p-b-9">
-						<a href="#" class="s-text7">
-							Sunglasses
+						<a href="{{ url('product') }}" class="s-text7">
+							Sách
 						</a>
 					</li>
 				</ul>
@@ -302,26 +284,20 @@
 
 				<ul>
 					<li class="p-b-9">
-						<a href="#" class="s-text7">
-							Search
+						<a href="{{ url('checkOrder') }}" class="s-text7">
+							Tra cứu
 						</a>
 					</li>
 
 					<li class="p-b-9">
-						<a href="#" class="s-text7">
-							About Us
+						<a href="{{ url('about') }}" class="s-text7">
+							Thông tin
 						</a>
 					</li>
 
 					<li class="p-b-9">
-						<a href="#" class="s-text7">
-							Contact Us
-						</a>
-					</li>
-
-					<li class="p-b-9">
-						<a href="#" class="s-text7">
-							Returns
+						<a href="{{ url('contact') }}" class="s-text7">
+							Liên hệ
 						</a>
 					</li>
 				</ul>
@@ -359,7 +335,7 @@
 				</ul>
 			</div>
 
-			<div class="w-size8 p-t-30 p-l-15 p-r-15 respon3">
+			<!-- <div class="w-size8 p-t-30 p-l-15 p-r-15 respon3">
 				<h4 class="s-text12 p-b-30">
 					Newsletter
 				</h4>
@@ -371,14 +347,13 @@
 					</div>
 
 					<div class="w-size2 p-t-20">
-						<!-- Button -->
 						<button class="flex-c-m size2 bg4 bo-rad-23 hov1 m-text3 trans-0-4">
 							Subscribe
 						</button>
 					</div>
 
 				</form>
-			</div>
+			</div> -->
 		</div>
 
 		<div class="t-center p-l-15 p-r-15">
@@ -403,7 +378,7 @@
 			</a>
 
 			<div class="t-center s-text8 p-t-20">
-				Copyright © 2018 All rights reserved. | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+				 <i class="fa fa-heart-o" aria-hidden="true"></i>  <a href="https://colorlib.com" target="_blank">Tbook</a>
 			</div>
 		</div>
 	</footer>
