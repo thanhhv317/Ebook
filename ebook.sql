@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th5 19, 2019 lúc 07:11 AM
+-- Thời gian đã tạo: Th5 23, 2019 lúc 11:31 AM
 -- Phiên bản máy phục vụ: 10.1.30-MariaDB
 -- Phiên bản PHP: 7.3.3
 
@@ -68,8 +68,8 @@ CREATE TABLE `authors` (
 --
 
 INSERT INTO `authors` (`id`, `name`, `alias`, `birthday`, `info`, `image`, `created_at`, `updated_at`) VALUES
-(1, 'Nguyễn Nhật Ánh', 'nguyen-nhat-anh', '1955-05-07 00:00:00', 'Nguyễn Nhật Ánh là nhà văn Việt Nam chuyên viết cho tuổi mới lớn. Ông sinh ngày 7 tháng 5 năm 1955 tại làng Đo Đo, xã Bình Quế, huyện Thăng Bình, tỉnh Quảng Nam.', 'nguyen-nhat-anh.jpg', NULL, '2019-04-08 08:31:09'),
-(2, 'Shinkai Makoto', 'shinkai-makoto', '1973-02-09 00:00:00', 'Shinkai Makoto tốt nghiệp đại học Chūō ngành văn học Nhật Bản. Tại đó, ông là thành viên câu lạc bộ văn học trẻ với nhiệm vụ chính là vẽ sách. Ông nói cảm hứng sáng tạo của mình bắt nguồn từ manga, anime và tiểu thuyết được đọc thời cấp 2. Anime yêu thích của ông là Laputa của đạo diễn Miyazaki Hayao. Sau khi tốt nghiệp Chūō năm 1994, Shinkai Makoto thiết kế đồ hoạ và làm clip game tại công ty trò chơi Falcom trong 5 năm. Thời gian này, ông đã gặp nhạc sĩ Tenmon và cộng tác với Tenmon trong tất cả các phim của mình. Năm 1999, Shinkai Makoto phát hành một phim hoạt hình ngắn trắng đen dài khoảng 5 phút là Nàng và Con mèo của Nàng. Bộ phim dành nhiều giải thưởng, trong đó có giải thưởng lớn tại \"CG Animation Contest\" của PROJECT TEAM DOGA. Sau khi chiến thắng giải thưởng ấy, ông bắt đầu tìm ý tưởng cho dự án tiếp theo khi làm việc tại Falcom. Vào tháng 6 năm 2000, ông bắt đầu có ý tưởng về phim Tiếng gọi từ vì sao xa sau khi vẽ bức tranh một cô gái trong buồng lái đang cầm điện thoại di động. Mangazoo sau đó đã đến gặp và đề nghị làm việc với ông trên một dự án anime có thể thu lợi nhuận. Tháng 5 năm 2001, ông nghỉ việc tại Falcom và bắt đầu bắt tay làm Tiếng gọi từ vì sao xa. Tiếng gọi từ vì sao xa mở đầu cho hàng loạt anime thành công tiếp theo của Shinkai Makoto bao gồm Bên kia đám mây, nơi ta hẹn ước (phát hành ngày 20 tháng 11 năm 2004), 5 Centimet trên giây (phát hành ngày 3 tháng 3 năm 2007) và Những đứa trẻ đuổi theo tinh tú (phát hành ngày 7 tháng 5 năm 2011). Ngoài ra, ông còn viết tiểu thuyết đầu tay là 5 centimet trên giây. Tác phẩm mới nhất của ông chính là Your Name – Tên cậu là gì? đã gây nên cơn sốt tại các phòng vé của Nhật Bản nói riêng cũng như thế giới nói chung, và đã trở thành phim anime có doanh thu toàn cầu cao nhất trong lịch sử.', 'makoto-shinkai.jpg', NULL, '2019-04-08 08:31:43'),
+(1, 'Nguyễn Nhật Ánh', 'nguyen-nhat-anh', '1955-05-07 00:00:00', 'Nguyễn Nhật Ánh là nhà văn Việt Nam chuyên viết cho tuổi mới lớn. Ông sinh ngày 7 tháng 5 năm 1955 tại làng Đo Đo, xã Bình Quế, huyện Thăng Bình, tỉnh Quảng Nam.', 'nna.jpg', NULL, '2019-05-22 23:30:03'),
+(2, 'Shinkai Makoto', 'shinkai-makoto', '1973-02-09 00:00:00', 'Shinkai Makoto tốt nghiệp đại học Chūō ngành văn học Nhật Bản. Tại đó, ông là thành viên câu lạc bộ văn học trẻ với nhiệm vụ chính là vẽ sách. Ông nói cảm hứng sáng tạo của mình bắt nguồn từ manga, anime và tiểu thuyết được đọc thời cấp 2. Anime yêu thích của ông là Laputa của đạo diễn Miyazaki Hayao. Sau khi tốt nghiệp Chūō năm 1994, Shinkai Makoto thiết kế đồ hoạ và làm clip game tại công ty trò chơi Falcom trong 5 năm. Thời gian này, ông đã gặp nhạc sĩ Tenmon và cộng tác với Tenmon trong tất cả các phim của mình. Năm 1999, Shinkai Makoto phát hành một phim hoạt hình ngắn trắng đen dài khoảng 5 phút là Nàng và Con mèo của Nàng. Bộ phim dành nhiều giải thưởng, trong đó có giải thưởng lớn tại \"CG Animation Contest\" của PROJECT TEAM DOGA. Sau khi chiến thắng giải thưởng ấy, ông bắt đầu tìm ý tưởng cho dự án tiếp theo khi làm việc tại Falcom. Vào tháng 6 năm 2000, ông bắt đầu có ý tưởng về phim Tiếng gọi từ vì sao xa sau khi vẽ bức tranh một cô gái trong buồng lái đang cầm điện thoại di động. Mangazoo sau đó đã đến gặp và đề nghị làm việc với ông trên một dự án anime có thể thu lợi nhuận. Tháng 5 năm 2001, ông nghỉ việc tại Falcom và bắt đầu bắt tay làm Tiếng gọi từ vì sao xa. Tiếng gọi từ vì sao xa mở đầu cho hàng loạt anime thành công tiếp theo của Shinkai Makoto bao gồm Bên kia đám mây, nơi ta hẹn ước (phát hành ngày 20 tháng 11 năm 2004), 5 Centimet trên giây (phát hành ngày 3 tháng 3 năm 2007) và Những đứa trẻ đuổi theo tinh tú (phát hành ngày 7 tháng 5 năm 2011). Ngoài ra, ông còn viết tiểu thuyết đầu tay là 5 centimet trên giây. Tác phẩm mới nhất của ông chính là Your Name – Tên cậu là gì? đã gây nên cơn sốt tại các phòng vé của Nhật Bản nói riêng cũng như thế giới nói chung, và đã trở thành phim anime có doanh thu toàn cầu cao nhất trong lịch sử.', 'C5JowCDUMAEiGMo.jpg', NULL, '2019-05-22 23:32:03'),
 (7, 'Trác Nhã', 'trac-nha', '1987-02-05 00:00:00', 'không có thông tin', 'trac-nha.jpg', '2019-04-08 08:40:40', '2019-04-08 08:40:40'),
 (8, 'Du phong', 'du-phong', '1989-12-08 00:00:00', 'không có thông tin gì', 'Tac_gia_Du_Phong_1.png', '2019-04-08 08:48:28', '2019-04-08 08:48:28'),
 (9, 'Dương Thụy', 'duong-thuy', '1975-02-04 00:00:00', 'Dương Thụy sinh năm 1975 tại TP.HCM. Cô là nhà văn nữ có nhiều tác phẩm bán chạy, được đông đảo độc giả mến mộ như Oxford thương yêu, Nhắm mắt thấy Paris, Bồ câu chung mái vòm,…\r\n\r\nSinh trưởng trong một gia đình hiếu học và khó năng khiếu văn chương, ngay từ năm lớp 10, Dương Thụy đã có truyện ngắn đầu tay Búp bê băng giá.  Cô tốt nghiệp Cử Nhân văn chương Pháp tại Đại Học Khoa Học Xã Hội và Nhân Văn TP.HCM và thạc sĩ Quản trị kinh doanh tại Trung Tâm Pháp - Việt Đào Tạo về Quản Lý. Dương Thụy cũng từng nhận được học bổng của chính phủ Bỉ và tốt nghiệp Thạc sĩ Quản Trị Kinh Doanh của trường Đại Học Liege năm 2002.\r\n\r\nCô từng có thời gian làm phóng viên của báo Sinh Viên Việt Nam - Hoa Học Trò nhưng đã dừng việc viết báo mà chuyển sang môi trường doanh nghiệp với nhiều thử thách hơn.\r\n\r\nDương Thụy là nhà văn của những thành phố lãng mạn nhất trên thế giới. Đi nhiều và cảm nhận cũng nhiều, cây bút trẻ này đã đưa tất cả vào những cuốn sách của mình: từ khung cảnh tuyệt vời của những đất nước tận trời Âu xa xôi đến rung động tinh tế trong tâm hồn những cô gái Á Đông gần gũi.\r\n\r\nVăn chương của Dương Thụy nổi tiếng bởi sự lãng mạn, nhẹ nhàng, đậm chất nữ tính. Người đọc dễ dàng bị cuốn hút bởi những chuyện tình đẹp như thơ, những vùng đất lãng đãng mơ màng, những câu chuyện rung động trong từng chi tiết nhỏ. Các tác phẩm của cô luôn nhận được sự ủng hộ nhiệt tình từ độc giả.', 'duong-thuy.png', '2019-04-08 08:54:16', '2019-04-08 08:54:16');
@@ -199,6 +199,42 @@ CREATE TABLE `feedback` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Đang đổ dữ liệu cho bảng `feedback`
+--
+
+INSERT INTO `feedback` (`id`, `user_id`, `book_id`, `content`, `created_at`, `updated_at`) VALUES
+(3, 6, 3, 'quá dữ', '2019-05-22 00:03:18', '2019-05-22 00:03:18'),
+(4, 7, 1, 'sách này khá là hay, mình đoán vậy chứ đã đọc éo đâu mà biết hihi', '2019-05-22 00:24:04', '2019-05-22 00:24:04'),
+(5, 7, 3, 'Bạn phía trên pr hơi quá nhé', '2019-05-22 00:24:26', '2019-05-22 00:24:26'),
+(6, 7, 128, 'Tôi đã và đang sắp đọc xong cuốn sách này rồi, nay tôi lên đây để nói ra hết tâm tư lòng này là: là sách hay quá đi à à à....', '2019-05-22 00:39:11', '2019-05-22 00:39:11');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `headerpages`
+--
+
+CREATE TABLE `headerpages` (
+  `id` int(11) NOT NULL,
+  `image` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `text` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `headerpages`
+--
+
+INSERT INTO `headerpages` (`id`, `image`, `text`, `title`, `created_at`, `updated_at`) VALUES
+(1, 'bookds.jpeg', 'Thế giới sách', 'Trang sản phẩm', '2019-05-21 17:03:19', '2019-05-21 10:03:19'),
+(2, 'banner6.jpg', 'Liên hệ', 'Trang liên hệ', '2019-05-21 17:05:08', '2019-05-21 10:05:08'),
+(3, '1_Y_E8iXfA9bv9jePsyg9ATA.jpeg', 'Thông tin cá nhân', 'Trang thông tin cá nhân', '2019-05-21 17:30:08', '2019-05-21 10:30:08'),
+(4, 'Conserver-the_visuel-haut_desktop.jpg', 'Giỏ hàng- thanh toán', 'Trang giỏ hàng thanh toán', '2019-05-21 17:18:41', '2019-05-21 10:18:41'),
+(5, 'Visuel-cate_coffret_et_assortiment_desktop.jpg', 'Tra cứu đơn hàng', 'Trang tra cứu đơn hàng', '2019-05-22 15:59:21', '2019-05-22 08:59:21');
+
 -- --------------------------------------------------------
 
 --
@@ -249,7 +285,8 @@ INSERT INTO `kinds` (`id`, `name`, `created_at`, `updated_at`) VALUES
 (6, 'Giáo khoa- Tham khảo', '2019-04-08 08:28:53', '2019-04-08 08:28:53'),
 (7, 'Kinh tế', '2019-04-08 08:29:04', '2019-04-08 08:29:04'),
 (8, 'Tâm lý - Kỹ năng sống', '2019-04-08 08:29:31', '2019-04-08 08:29:31'),
-(9, 'Văn hóa - Nghệ thuật', '2019-04-08 08:30:18', '2019-04-08 08:30:18');
+(9, 'Văn hóa - Nghệ thuật', '2019-04-08 08:30:18', '2019-04-08 08:30:18'),
+(10, 'Truyện dài', '2019-05-19 05:47:26', '2019-05-19 05:47:26');
 
 -- --------------------------------------------------------
 
@@ -289,14 +326,69 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 --
 
 CREATE TABLE `orders` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `user_id` int(10) UNSIGNED NOT NULL,
-  `book_id` int(10) UNSIGNED NOT NULL,
+  `id` int(11) NOT NULL,
   `quantity` int(11) NOT NULL,
-  `content` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `totalPrice` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `address` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `phone` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `payMethod` int(11) NOT NULL DEFAULT '1',
+  `content` text COLLATE utf8_unicode_ci NOT NULL,
+  `status` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `orders`
+--
+
+INSERT INTO `orders` (`id`, `quantity`, `totalPrice`, `name`, `address`, `phone`, `email`, `payMethod`, `content`, `status`, `created_at`, `updated_at`) VALUES
+(16, 4, '256000', 'Mai Lan', 'Ho chi minh, vietnam', '0332524582', 'mailan@gmail.com', 1, 'không có gì', '3', '2019-05-22 18:13:12', '2019-05-22 11:13:12'),
+(18, 4, '333000', 'Hoàng Văn Thành', '100Q Hùng Vương, Phường 9, quận 5, hồ chí minh', '332072362', 'thanhhv317@gmail.com', 1, 'Tôi là người có tiền nên tôi mua nhiều thì sao nào', '2', '2019-05-21 08:10:00', '2019-05-21 01:10:00'),
+(20, 1, '64500', 'Hoàng Văn Thành', '100Q Hùng Vương, Phường 9, quận 5, hồ chí minh', '2432134152', 'thanhhv317@gmail.com', 1, 'không có gì', '3', '2019-05-21 08:40:24', '2019-05-21 01:40:24'),
+(21, 3, '245000', 'Hoàng Văn Thành', '100Q Hùng Vương, Phường 9, quận 5, hồ chí minh', '0332072362', 'thanhhv317@gmail.com', 1, 'không có gì', '1', '2019-05-22 18:13:05', '2019-05-22 11:13:05'),
+(22, 1, '70000', 'Hoàng Văn Thành', '100Q Hùng Vương, Phường 9, quận 5, hồ chí minh', '2432134152', 'thanhhv317@gmail.com', 2, 'không có gì', '3', '2019-05-22 18:13:08', '2019-05-22 11:13:08'),
+(23, 2, '105000', 'Hoàng Văn Thành', '100Q Hùng Vương, Phường 9, quận 5, hồ chí minh', '2432134152', 'thanhhv317@gmail.com', 1, 'không có gì', '1', '2019-05-21 10:46:09', '2019-05-21 03:46:09'),
+(24, 3, '224500', 'Hoàng Văn Thành', '100Q Hùng Vương, Phường 9, quận 5, hồ chí minh', '2432134152', 'thanhhv317@gmail.com', 1, 'không có gì', '1', '2019-05-22 20:09:58', '2019-05-22 13:09:58');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `order_details`
+--
+
+CREATE TABLE `order_details` (
+  `id` int(11) NOT NULL,
+  `order_id` int(11) NOT NULL,
+  `book_id` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `quantity` int(11) NOT NULL,
+  `price` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `order_details`
+--
+
+INSERT INTO `order_details` (`id`, `order_id`, `book_id`, `quantity`, `price`, `created_at`, `updated_at`) VALUES
+(16, 16, '129', 1, '58000', '2019-05-20 03:20:46', '2019-05-20 03:20:46'),
+(17, 16, '128', 3, '66000', '2019-05-20 03:20:46', '2019-05-20 03:20:46'),
+(19, 18, '134', 2, '115000', '2019-05-20 08:22:24', '2019-05-20 08:22:24'),
+(20, 18, '132', 1, '45000', '2019-05-20 08:22:25', '2019-05-20 08:22:25'),
+(21, 18, '129', 1, '58000', '2019-05-20 08:22:25', '2019-05-20 08:22:25'),
+(25, 20, '2', 1, '64500', '2019-05-21 01:39:34', '2019-05-21 01:39:34'),
+(26, 21, '137', 1, '75000', '2019-05-21 01:40:11', '2019-05-21 01:40:11'),
+(27, 21, '136', 1, '52000', '2019-05-21 01:40:11', '2019-05-21 01:40:11'),
+(28, 21, '138', 1, '118000', '2019-05-21 01:40:11', '2019-05-21 01:40:11'),
+(29, 22, '133', 1, '70000', '2019-05-21 01:46:05', '2019-05-21 01:46:05'),
+(30, 23, '131', 1, '60000', '2019-05-21 01:46:20', '2019-05-21 01:46:20'),
+(31, 23, '132', 1, '45000', '2019-05-21 01:46:20', '2019-05-21 01:46:20'),
+(32, 24, '1', 1, '125000', '2019-05-22 05:00:16', '2019-05-22 05:00:16'),
+(33, 24, '3', 1, '33500', '2019-05-22 05:00:16', '2019-05-22 05:00:16'),
+(34, 24, '128', 1, '66000', '2019-05-22 05:00:16', '2019-05-22 05:00:16');
 
 -- --------------------------------------------------------
 
@@ -315,7 +407,7 @@ CREATE TABLE `password_resets` (
 --
 
 INSERT INTO `password_resets` (`email`, `token`, `created_at`) VALUES
-('thanhhv317@gmail.com', '$2y$10$s6Zbr2JcQDPY.Q5AO/eDZums/mcNeruhQn16x6s1yxFZao6.ld7am', '2019-05-17 10:31:57');
+('thanhhv317@gmail.com', '$2y$10$C8sCzq3kyOsdcLs0nN6o2OlJnAbms4HYvvUKoQGC.431YBId1YKGC', '2019-05-22 23:13:01');
 
 -- --------------------------------------------------------
 
@@ -360,7 +452,7 @@ CREATE TABLE `top_banners` (
 --
 
 INSERT INTO `top_banners` (`id`, `value`, `created_at`, `updated_at`) VALUES
-(1, '[{\"id\":\"4636249\",\"linkbtn\":\"fb.com\",\"textbtn\":\"s\\u00e1ch b\\u00e1n ch\\u1ea1y\",\"image\":\"56877170_10157243899272769_7371811085793361920_n.jpg\"},{\"id\":\"71737543\",\"linkbtn\":\"hi\",\"textbtn\":\"s\\u00e1ch thi\\u1ebfu nhi\",\"image\":\"nobi.png\"},{\"id\":\"24413280\",\"linkbtn\":\"3\",\"textbtn\":\"Truy\\u1ec7n ng\\u1eafn\",\"image\":\"sabuta.png\"},{\"id\":\"63109918\",\"linkbtn\":\"bamvo\",\"textbtn\":\"Ti\\u1ec3u thuy\\u1ebft\",\"image\":\"57297744_10157243899352769_2040960753887870976_n.png\"},{\"id\":\"38687792\",\"linkbtn\":\"fb.com 1\",\"textbtn\":\"blog\",\"image\":\"photo-3-1500343004516.jpg\"},{\"id\":\"49989886\",\"linkbtn\":\"fb.com 1\",\"textbtn\":\"mua ngay\",\"image\":\"Untitled.png\"}]', NULL, '2019-05-05 10:05:01');
+(1, '[{\"id\":\"4636249\",\"linkbtn\":\"product\",\"textbtn\":\"s\\u00e1ch b\\u00e1n ch\\u1ea1y\",\"image\":\"56877170_10157243899272769_7371811085793361920_n.jpg\"},{\"id\":\"71737543\",\"linkbtn\":\"product\\/5\",\"textbtn\":\"s\\u00e1ch thi\\u1ebfu nhi\",\"image\":\"nobi.png\"},{\"id\":\"24413280\",\"linkbtn\":\"product\\/1\",\"textbtn\":\"Truy\\u1ec7n ng\\u1eafn\",\"image\":\"sabuta.png\"},{\"id\":\"63109918\",\"linkbtn\":\"product\\/5\",\"textbtn\":\"Ti\\u1ec3u thuy\\u1ebft\",\"image\":\"57297744_10157243899352769_2040960753887870976_n.png\"},{\"id\":\"38687792\",\"linkbtn\":\"about\",\"textbtn\":\"Th\\u00f4ng tin\",\"image\":\"photo-3-1500343004516.jpg\"},{\"id\":\"49989886\",\"linkbtn\":\"login\",\"textbtn\":\"mua ngay\",\"image\":\"Untitled.png\"}]', NULL, '2019-05-22 23:50:31');
 
 -- --------------------------------------------------------
 
@@ -396,6 +488,10 @@ CREATE TABLE `users` (
   `email_verified_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `level` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `address` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `birthday` date NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -405,8 +501,11 @@ CREATE TABLE `users` (
 -- Đang đổ dữ liệu cho bảng `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `level`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'hoàng văn thành', 'thanhhv317@gmail.com', '2019-05-17 17:28:25', '$2y$10$FHifJeTqwzfONuiY9UAx9.axtqC4KKeA90JoROCJRBxBA.lq2HJgy', '1', NULL, '2019-05-17 10:28:25', '2019-05-17 10:28:25');
+INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `level`, `address`, `phone`, `birthday`, `image`, `remember_token`, `created_at`, `updated_at`) VALUES
+(6, 'Hoàng Văn Thành', 'thanhhv317@gmail.com', '2019-05-23 07:45:24', '$2y$10$oaek6pCJ7tWAG.VyaLw/VuSB2a.BxVwhc//uTVH4U9gA3uILEQZfu', '2', '100Q Hùng Vương, Phường 9, quận 5, hồ chí minh', '2432134152', '1998-06-20', 'hi1.png', '0YKe4qYU3Sf6E8feyXVWCGfjz0zP94BEscYImgJ6agCb32zNUL4LLzMDv6Rq', '2019-05-19 02:41:42', '2019-05-20 21:55:23'),
+(7, 'Mai Lan', 'mailan@gmail.com', '2019-05-23 07:45:06', '$2y$10$sx2SwZ/BvbSkok5XStBfoOFgjDjixjyCnQLYRHZ5fM4KKTwSPAcUy', '1', 'Ho chi minh, vietnam', '0332524582', '1998-02-02', 'maxresdefault.jpg', '8dxDIQ3TzOgrZX4A4RlP5CsTPQCJJB58UBbppEMw4ojn35YQjaW3Nop888KI', '2019-05-19 05:16:20', '2019-05-19 05:17:22'),
+(8, 'kẻ lừa đảo', 'luadao@gmail.com', '2019-05-20 09:56:30', '$2y$10$2xdn5fpIlMxjyI0mB26inenPDXvYhBy8E2n9LgzBZXAatYqzu52t2', '1', 'Ho chi minh, vietnam', '032545658', '1998-11-08', '20150416-0001.jpeg', 'tgB21aXSA4RoN3T2qBqcm8XKWZOujTCmgItp0yBhD9YAQpSyrP0F4Gm1iHCJ', '2019-05-20 02:53:48', '2019-05-20 02:54:17'),
+(9, 'Trịnh Đình Quang', 'test@gmail.com', '2019-05-23 07:48:25', '$2y$10$Ol7jA1roxnDLa4s1aa9DBeVvfLTR19QqylRQNOhxWacyABBPPeHzW', '2', 'Ho chi minh, vietnam', '0325456582', '1998-11-08', 'cute-dog-shiba-inu-ryuji-japan-1-1492164409885.jpg', NULL, '2019-05-23 00:46:47', '2019-05-23 00:48:25');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -464,6 +563,12 @@ ALTER TABLE `feedback`
   ADD KEY `feedback_book_id_foreign` (`book_id`);
 
 --
+-- Chỉ mục cho bảng `headerpages`
+--
+ALTER TABLE `headerpages`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Chỉ mục cho bảng `image_books`
 --
 ALTER TABLE `image_books`
@@ -486,9 +591,14 @@ ALTER TABLE `migrations`
 -- Chỉ mục cho bảng `orders`
 --
 ALTER TABLE `orders`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Chỉ mục cho bảng `order_details`
+--
+ALTER TABLE `order_details`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `orders_user_id_foreign` (`user_id`),
-  ADD KEY `orders_book_id_foreign` (`book_id`);
+  ADD KEY `fk_order` (`order_id`);
 
 --
 -- Chỉ mục cho bảng `publishers`
@@ -546,7 +656,13 @@ ALTER TABLE `books`
 -- AUTO_INCREMENT cho bảng `feedback`
 --
 ALTER TABLE `feedback`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT cho bảng `headerpages`
+--
+ALTER TABLE `headerpages`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT cho bảng `image_books`
@@ -558,7 +674,7 @@ ALTER TABLE `image_books`
 -- AUTO_INCREMENT cho bảng `kinds`
 --
 ALTER TABLE `kinds`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT cho bảng `migrations`
@@ -570,7 +686,13 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT cho bảng `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+
+--
+-- AUTO_INCREMENT cho bảng `order_details`
+--
+ALTER TABLE `order_details`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT cho bảng `publishers`
@@ -594,7 +716,7 @@ ALTER TABLE `top_slides`
 -- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
@@ -648,11 +770,10 @@ ALTER TABLE `image_books`
   ADD CONSTRAINT `image_books_book_id_foreign` FOREIGN KEY (`book_id`) REFERENCES `books` (`id`) ON DELETE CASCADE;
 
 --
--- Các ràng buộc cho bảng `orders`
+-- Các ràng buộc cho bảng `order_details`
 --
-ALTER TABLE `orders`
-  ADD CONSTRAINT `orders_book_id_foreign` FOREIGN KEY (`book_id`) REFERENCES `books` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `orders_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
+ALTER TABLE `order_details`
+  ADD CONSTRAINT `fk_order` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
