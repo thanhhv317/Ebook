@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/','ClientPageController@getHome');
 
 Route::get('test',function(){
 	return view('admin.master');
@@ -170,6 +168,15 @@ Route::get('check/{id}',['as'=>'getCheckOrderById','uses'=>'ClientPageController
 
 Auth::routes();
 
-Route::any('{all?}','HomeController@notFound')->where('all','(.*)');
 
 // Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('qr-code-g', function () {
+  	\QrCode::size(500)
+            ->format('png')
+            ->generate('ItSolutionStuff.com', public_path('images/qrcode.png'));
+    
+  return view('qrCode.qrCode');
+    
+});
+Route::any('{all?}','HomeController@notFound')->where('all','(.*)');

@@ -90,6 +90,61 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">
               <!-- Messages: style can be found in dropdown.less-->
+              <!-- mail -->
+              <li class="dropdown messages-menu">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  <i class="fa fa-envelope-o"></i>
+                  <span class="label label-success">1</span>
+                </a>
+                <ul class="dropdown-menu">
+                  <li class="header">Bạn có một tin nhắn mới</li>
+                  <li>
+                    <!-- inner menu: contains the actual data -->
+                    <ul class="menu">
+                      <li><!-- start message -->
+                        <a href="#">
+                          <div class="pull-left">
+                            <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image" />
+                          </div>
+                          <h4>
+                            Support Team
+                            <small><i class="fa fa-clock-o"></i> 5 mins</small>
+                          </h4>
+                          <p>Why not buy a new awesome theme?</p>
+                        </a>
+                      </li><!-- end message -->
+                    </ul>
+                  </li>
+                  <li class="footer"><a href="#">Xem tất cả tin nhắn</a></li>
+                </ul>
+              </li>
+
+              <!-- notification -->
+              <li class="dropdown notifications-menu">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  <i class="fa fa-bell-o"></i>
+                  <span class="label label-warning">2</span>
+                </a>
+                <ul class="dropdown-menu">
+                  <li class="header">Bạn có 2 thông báo mới</li>
+                  <li>
+                    <!-- inner menu: contains the actual data -->
+                    <ul class="menu">
+                      <li>
+                        <a href="#">
+                          <i class="fa fa-users text-red"></i> 5 new members joined
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <i class="fa fa-shopping-cart text-green"></i> 25 sales made
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="footer"><a href="#">View all</a></li>
+                </ul>
+              </li>
               
               <!-- User Account Menu -->
               <li class="dropdown user user-menu">
@@ -170,6 +225,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <li><a href="{!! url('admin/author/list') !!}"><i class="fa fa-user"></i> <span>Tác giả</span></a></li>
             <li><a href="{!! url('admin/kind/list') !!}"><i class="fa fa-link"></i> <span>Thể loại</span></a></li>
             <li><a href="{!! url('admin/publisher/list') !!}"><i class="fa fa-truck"></i> <span>Nhà xuất bản</span></a></li>
+            <li><a href="{!! url('admin/publisher/list') !!}"><i class="fa fa-user"></i> <span>Người dùng</span></a></li>
+            <li class="treeview">
+              <a href="#"><i class="fa fa-envelope"></i> <span>Mail</span> <i class="fa fa-angle-left pull-right"></i></a>
+              <ul class="treeview-menu">
+                <li><a href="{!! url('admin/order/list/5') !!}">Mail đã nhận</a></li>
+                <li><a href="{!! url('admin/order/list/6') !!}">Mail đã gửi</a></li>
+              </ul>
+            </li>
             <li class="treeview">
               <a href="#"><i class="fa fa-newspaper-o"></i> <span>Hóa đơn</span> <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">

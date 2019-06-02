@@ -10,6 +10,7 @@
 		@endforeach
 	</div>
 	<div class="col-md-8">
+		<div class="col-md-6">	
 		<label for="">Tên sách : </label>
 		<label style="color: red">{!! $data->name !!}.</label>
 		<br>
@@ -34,6 +35,11 @@
 				\Carbon\Carbon::createFromTimeStamp(strtotime($data->created_at))->diffForHumans();
 			!!}
 		</label>
+		</div>
+		<div class="col-md-6">
+			<?php $url = url('product/'.$data->id); ?>
+			{!! QrCode::size(200)->generate($url); !!}
+		</div>	
 		<br>
 		<hr>
 		<label>Mô tả :</label>

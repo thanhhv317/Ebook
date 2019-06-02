@@ -52,14 +52,15 @@
 
       // delete image_book->image
       $('a#del_img-demo').on('click',function(){
-        var url ='http://localhost:8080/www/framework/ebook/admin/book/delimg/';
+        // var url ='http://localhost:8080/www/framework/ebook/admin/book/delimg/';
+        var url = "{{ url('admin/book/delimg') }}";
         var _token = $("form[name='frmProductEdit']").find("input[name='_token']").val();
         var idHinh = $(this).parent().find('img').attr('idHinh');
         var img = $(this).parent().find('img').attr('src');
         var rid = $(this).parent().find('img').attr('id');
         
         $.ajax({
-            url: url +idHinh,
+            url: url +'/' +idHinh,
             type: 'GET',
             cache: false,
             data: {'_token': _token,'idHinh':idHinh,'urlHinh':img},

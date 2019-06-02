@@ -180,7 +180,7 @@
 							</div>
 
 							<div class="block2-txt p-t-20" style="text-align: center;">
-								<a href="{!! url('product-detail/'.$item['alias']) !!}" class="block2-name dis-block s-text3 p-b-5">
+								<a href="{!! url('product-detail/'.$item['id']) !!}" class="block2-name dis-block s-text3 p-b-5">
 									{!! $item['name'] !!}
 								</a>
 
