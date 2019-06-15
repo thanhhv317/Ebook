@@ -331,6 +331,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <!-- Settings tab content -->
           <div class="tab-pane" id="control-sidebar-settings-tab">
             <form method="post">
+              @csrf
               <h3 class="control-sidebar-heading">General Settings</h3>
               <div class="form-group">
                 <label class="control-sidebar-subheading">
@@ -352,11 +353,23 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
     <!-- REQUIRED JS SCRIPTS -->
 
+    
+
     @include('admin.pages.footer')
     <!-- Optionally, you can add Slimscroll and FastClick plugins.
           Both of these plugins are recommended to enhance the
           user experience. Slimscroll is required when using the
           fixed layout. -->
   </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.dev.js"></script>
+    <script>
+        //port to socket io
+        var socket = io('http://localhost:6002');
+        socket.on('chat:message',function(data){
+            console.log('xin chao');
+            console.log(data);
+            
+        })
+    </script>
 
 </html>

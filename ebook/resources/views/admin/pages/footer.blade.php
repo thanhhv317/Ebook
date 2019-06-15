@@ -32,6 +32,8 @@
     <script src="{!! url('public/admin/dist/js/demo.js') !!}" type="text/javascript"></script>
     <!-- ckediter -->
     <script type="text/javascript" language="javascript" src="{!! url('public/admin/js/ckeditor/ckeditor.js') !!}" ></script>
+    <!-- socket io -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.dev.js"></script>
     
     <!-- FastClick -->
     <script src="{!! url('public/admin/plugins/fastclick/fastclick.min.js') !!}" type="text/javascript"></script>
@@ -77,3 +79,6 @@
       $("#datemask").inputmask("dd/mm/yyyy", {"placeholder": "dd/mm/yyyy"});
         $("[data-mask]").inputmask();
     </script>
+
+    <!-- socket io -->
+    

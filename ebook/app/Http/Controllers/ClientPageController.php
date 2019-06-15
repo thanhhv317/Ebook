@@ -21,6 +21,8 @@ use App\HeaderPage;
 use App\Mail\SendEmail;
 use App\Mail\OrderSuccessMail;
 
+use App\Events\RedisEvent;
+
 class ClientPageController extends Controller
 {
     public function getHome(){
@@ -251,11 +253,16 @@ class ClientPageController extends Controller
             $order_detail->price = $resultPrice[$i];
             $order_detail->save();
         }
-
+        
+        // event get order - send to redis
+        event(
+            $e = new RedisEvent($order)
+        );
+        //test event -> success 
+        //return $e->getAll();
+       
         //send mail get order success
         Mail::to($email)->send(new OrderSuccessMail($name, $email, $order->id));
-
-
 
         return redirect()->route('getCart')->with(['flash_level'=>'success','flash_message'=>"Đặt hàng thành công, đơn hàng sẽ chuyển đến cho bạn sớm nhất. Mã đặt hàng của bạn là $order->id. Vui lòng nhớ thông tin để tra cứu đơn hàng."]);
     }
